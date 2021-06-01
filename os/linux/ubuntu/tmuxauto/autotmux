@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# name     : tmuxauto， tmux environment make easy
+# author   : shuoqi.yu shuoqi.yu@cs2c.com.cn
+# license  : GPL
+# created  : Dec 17 2019
+# modified : Dec 20 2019
+#
+
+cmd=$(which tmux) # tmux path
+session="Code" # session name
+dcode="cd ~/rpmbuild/x86/BUILD/mate-session-manager-1.8.1.tmp/; ls"
+dcompile="cd ~/rpmbuild/x86/; ls"
+dmarkdown="cd ~/Markdown/"
+
+if [ -z $cmd ]; then
+  echo "You need to install tmux."
+  exit 1
+fi
+
+# 
+has=$(tmux ls)
+
+if [ $? -ne 0 ]; then
+    # session create, default window: 0:bash
+    $cmd new -s $session -d 
+
+    # window rename
+    tmux rename-window -t $session:0 "bash"
+
+    # window create
+    # 1:Coding Directory
+    $cmd neww -a -n Coding -t $session  
+    $cmd send -t $session:Coding "$dcode" Enter
+
+    # 2:Compile: cd ~/rpmbuild/BUILD/
+    $cmd neww -a -n Compile -t $session
+    $cmd send -t $session:Compile "$dcompile" Enter
+
+    # 3:Translation: trans :en
+    $cmd neww -a -n Translation -t $session
+    $cmd send -t $session:Translation "trans :en " Enter
+    # window split horizontally, trans :zh
+    $cmd split-window -h -t $session:Translation 
+    $cmd send -t $session:Translation "trans :zh " Enter
+
+    # 4:Learning: cd ~/Markdown
+    $cmd neww -a -n Learning -t $session
+    $cmd send -t $session:Learning "$dmarkdown" Enter
+
+    # 5:Others: For others
+    $cmd neww -a -n Others -t $session # 5:Others
+
+    # window select 
+    $cmd selectw -t $session:1
+fi
+
+# session attach
+$cmd attach -t $session
+
+exit 0
+

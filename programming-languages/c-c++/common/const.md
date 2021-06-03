@@ -13,14 +13,14 @@
 * [五、const常量与define宏定义的区别](#五const常量与define宏定义的区别)
 
 # 一、修饰常量
-```
+```c++
 　　const int temp1;  //temp1为常量，不可变
 　　int const temp2;  //temp2为常量，不可变
 ```
 
 # 二、修饰指针
     看const在*的前后，在前则指针指向的内容为常量，在后则指针本身为常量。
-```
+```c++
 　　const int *ptr;   //*ptr为常量；
 　　int const *ptr;   //*ptr为常量；
 　　int* const ptr;   //ptr为常量；
@@ -34,7 +34,7 @@
 # 四、const修饰c++类相关
 ## 1. const修饰类对象
     const修饰类对象时，其对象中的任何成员都不能被修改。const修饰的对象，只能调用const成员函数，因为任何非const成员函数都会有修改成员变量的可能。
-```
+```c++
 　　class TEMP{
 　　　　void func1();
 　　　　void func2() const;
@@ -49,7 +49,7 @@
 　　const修饰的成员变量不能被修改，同时只能在初始化列表中被初始化，因为常量只能被初始化，不能被赋值；
 　　赋值是使用新值覆盖旧值构造函数是先为其开辟空间然后为其赋值，不是初始化；
 而初始化列表开辟空间和初始化是同时完成的，直接给与一个值，所以const成员变量一定要在初始化列表中完成。
-```
+```c++
 　　class TEMP{
 　　　　const int val;            
 　　　　TEMP(int x)val(x){};   //只能在初始化列表中赋值；
@@ -59,7 +59,7 @@
 ## 3. const修饰类的成员函数
 　　const成员函数表示该成员函数不能修改类对象中的任何非const成员变量。一般const写在函数的后面，形如：void func() const;
 　　如果某个成员函数不会修改成员变量，那么最好将其声明为const，因为const成员函数不会对数据进行修改，如果修改，编译器将会报错；
-```
+```c++
 　　class TEMP{
 　　　　void func()const;  //常成员函数，不能修改对象中的成员变量，也不能调用类中任何非const成员函数；
 　　}
@@ -84,7 +84,7 @@
 ## 5. c++ mutable
 在C++中，mutable是为了突破const的限制而设置的。
 被mutable修饰的变量，将永远处于可变的状态，即使在一个const函数中，甚至结构体变量或者类对象为const，其mutable成员也可以被修改：
-```
+```c++
 　　class ST {
 　　　　public:
 　　　　int a;

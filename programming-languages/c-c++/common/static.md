@@ -31,7 +31,7 @@
 
 # 二、C++中static的用法
 ## 1. 类的静态成员
-```
+```c++
 class A
 {
 　　private:
@@ -42,7 +42,7 @@ class A
 
 
 ## 2. 类的静态成员函数
-```
+```c++
 class A
 {
 　　private:
@@ -58,7 +58,7 @@ void  A::func(int);
 
 ## 3. 只在cpp内有效的全局变量
 在cpp文件的全局范围内声明：
-```
+```c++
 static int val = 0；
 ```
 这个变量的含义是该cpp内有效，但是其他的cpp文件不能访问这个变量；

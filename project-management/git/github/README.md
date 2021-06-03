@@ -1,4 +1,4 @@
-# GitHub Markdown
+# GitHub Markdown ![](https://img.shields.io/badge/License-MIT-blue)
 :sunflower:
 
 ## How to write Markdown on GitHub
@@ -26,7 +26,13 @@ Images
 
 ```
 
+## Add gif on github
+convert `mp4` to `gif`: https://cloudconvert.com/mp4-to-gif
 
-## About what ?
-Some experiences in works.
+## Add logo on github
+define logo: https://www.canva.cn/
 
+## Add license on githbu
+licence icon: https://shields.io/
+
+Just edit label, message and color text.

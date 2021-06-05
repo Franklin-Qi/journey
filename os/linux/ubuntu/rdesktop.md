@@ -29,4 +29,9 @@ rdesktop -f -a 16 winip   # winip 为Windows ip地址
 ```
 rdesktop切换全屏可用`Ctrl+Alt+Enter`。
 
+复制粘贴：
+从window复制的内容粘贴到Ubuntu可以完美进行，但Ubuntu的内容复制粘贴到window不行。
 
+重启window的rdpclip.exe和相应remote服务不生效.
+```
+```

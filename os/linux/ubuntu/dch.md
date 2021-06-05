@@ -37,8 +37,16 @@ print O "  \n";
 ```
 
 ## 环境变量增加
-增加`DEBFULLNAME`为changelog提交的用户名
-增加`DEBEMAIL`为changelog提交的邮箱
+编辑`~/.bashrc`文件,增加`DEBFULLNAME`和`DEBEMAIL`环境变量。
+
+`DEBFULLNAME`为changelog提交的用户名
+`DEBEMAIL`为changelog提交的邮箱
+
+实例如下
+```shell
+export DEBFULLNAME="yushuoqi"
+export DEBEMAIL="yushuoqi@kylinos.cn"
+```
 
 ## 使用dch -i
 ```bash

@@ -3,9 +3,8 @@ ubunty 扫描软件中使用OpenCV处理图片一键美化。
 
 ## 1. opencv 配置
 ``` bash
-sudo apt-get install libopencv-dev
+$ sudo apt install libopencv-dev libopencv-photo-dev tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim libleptonica-dev libtesseract-dev
 ```
-
 动态库位置：
 /usr/lib/x86_64-linux-gnu/libopencv*
 
@@ -16,13 +15,6 @@ sudo apt-get install libopencv-dev
 1、在获取源码包之前，确保在软件源配置文件/etc/apt/sources.list中添加了deb-src项
 2、使用如下命令获取xxx源码包的详细信息:
  sudo apt-cache showsrc opencv 这用来查询当前镜像站点中是否有该源码包。
- 找到libopencv_photo
-
- 3、 sudo apt-get source libopencv-photo-dev
-
-进而找到 (scn == 4 || scn == 3)断言错误的原因为加载图片错误（imread读取方式不为0，图片路径正确）
-可用im.data非空代表加载成功。
-
 
 ## 3. Qt中使用opencv读取资源文件中图片
 在使用opencv中，我们一般使用imread读取图片，但是在Qt creator中的资源文件的路径一般为:/xxx/xxx/xxx.png,例如我的就是

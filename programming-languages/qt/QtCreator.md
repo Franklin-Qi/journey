@@ -1,16 +1,35 @@
 # QtCreator
+## 安装Qtcreator
+Qtcreator下载地址：http://download.qt.io/archive/qt/
+安装参考：https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
+
+安装对应依赖
+```bash
+$ sudo apt install qtcreator qt5-default qttools5-dev-tools gcc g++ libqt4-dev build-essential cmake
+```
+
+## 配置Qtcreator
+
+### 提示Kit不存在
+option -> qt version -> 选择qmake路径为`/usr/lib/qt5/bin/qmake`
+
+### 代码提示很多未定义
+帮助-》关于插件-》c++，只保留`ClassView`和`CppEditor`。
 ## 解决警告
-1.1 qt overriding recipe for target 'install_target'
+qt overriding recipe for target 'install_target'
 命令行进行qmake查看该行Makefile，查看有多行install_target，
 所以可以修改Pro文件，删除一个target设置。
 
 ## Your GStreamer installation is missing a plug-in 
 QMediaPlayer error:
-> sudo apt-get install ubuntu-restricted-extras
-
+```bash
+sudo apt-get install ubuntu-restricted-extras
+```
 
 ## 重命名快捷键
-`ctrl+shift+ri` 比在后端用grep、sed更快。
+`ctrl+shift+r` 比在后端用grep、sed更快。
+但是需要在工具-》选项-》fakevim开启`传递Control按键`
+之后就可以通过Ctrl+c/v进行复制粘贴。
 
 ## 帮助文档F1
 帮助文档在指定的名称上面按F1,可多次F1,返回则是Esc;
@@ -27,9 +46,7 @@ environment(环境)->Keyboard(键盘)，发现TextEditor.CompleteThis命令，�
 点击那个红叉叉，将原快捷键删除后，添加Alt+/(Eclipse常用这个)
 成功，代码提示顺利。
 
-## 快捷键
-[快捷键](https://www.cnblogs.com/lsgxeva/p/7804617.html)
-
+## 快捷键相关
 快捷键风格，左边一列为ctrl开始，底部一行为alt开始
 
 切换Vim的编辑风格 Alt+V, Alt+V
@@ -44,7 +61,5 @@ cpp和h切换  F4
 隐藏或关闭项目文件目录 alt+0
 全屏 ctrl+shift+f11
 全项目文件搜索字符串  ctrl+shift+f 或者 alt+2
+快速搜索帮助文件和项目文件 ctrl+k
 
-
-## Qt学习地址
-[Qt开发经验博客](https://gitee.com/feiyangqingyun/qtkaifajingyan)

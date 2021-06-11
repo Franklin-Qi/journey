@@ -1,6 +1,6 @@
 # 自定义博客园
 ## 页面定制 CSS 代码 
-```
+```html
 /*博客主题美化教程：  
                                 AnotherEon001主题：
                                      https://www.cnblogs.com/shwee/p/9060226.html#shwtop
@@ -644,7 +644,7 @@ right: 0;
 ```
 
 ## 页首 HTML 代码 
-```
+```html
 <!-- <div id="blog_nav_admin" style="display:none"> </div> -->
 
 <!--
@@ -812,7 +812,7 @@ ap.init();
 ## 页脚 HTML 代码 
 
 ### 增加目录
-```
+```html
 <script type="text/javascript">
 /* 生成博客目录的JS代码，两级目录
     这段代码按H2、H3格式生成两级菜单
@@ -995,7 +995,7 @@ window.onload=function(){
 ```
 
 ### 增加页脚动画
-```
+```html
 <!--  增加页脚动画  -->
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
 <script type="text/javascript">
@@ -1004,7 +1004,7 @@ L2Dwidget.init();
 ```
 
 ### 修改标签页的icon图标
-```
+```html
 <!-- 自定义修改标签页的icon图标，网站生成icon： https://realfavicongenerator.net/#.XDBOgc_7RKM -->
 <script type="text/javascript" language="javascript">
 　　//Setting ico for cnblogs

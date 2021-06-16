@@ -63,3 +63,17 @@ cpp和h切换  F4
 全项目文件搜索字符串  ctrl+shift+f 或者 alt+2
 快速搜索帮助文件和项目文件 ctrl+k
 
+## fakevim使用ctrl键
+ctrl+f: 选中一定区域进行指定区域替换字符串
+原先ctrl+f换页功能可用pgup或pgdn替换。
+
+
+## 设置代码片段
+yusq片段: 打开 工具->选项->文本编辑器->片段，右侧点击添加yusq
+```c++
+/*
+ * @brief   :
+ * @author  :Yushuoqi
+ * @date    :%{CurrentDate:yyyy.MM.dd}
+ */
+```

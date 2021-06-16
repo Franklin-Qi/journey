@@ -1,6 +1,13 @@
 # QComboBox beauty
 下拉列表框美化技巧整理
 
+## 增加下拉数据
+```c++
+    //设置左手右手鼠标控件
+    ui->handHabitComBox->addItem(tr("Lefthand"), true);
+    ui->handHabitComBox->addItem(tr("Righthand"), false);
+```
+
 ## 字体居中显示
 可以这么用，加入一个QLineEdit
     QLineEdit *lineEdit = new QLineEdit;

@@ -8,55 +8,41 @@
 #
 
 cmd=$(which tmux) # tmux path
-session="Code" # session name
-dcode="cd ~/rpmbuild/x86/BUILD/mate-session-manager-1.8.1.tmp/; ls"
-dcompile="cd ~/rpmbuild/x86/; ls"
-dmarkdown="cd ~/Markdown/"
+session="Programing" # session name
+work="cd ~/code/work/kylin-scanner/"
+nfs="cd ~/nfs/"
 
 if [ -z $cmd ]; then
   echo "You need to install tmux."
   exit 1
 fi
 
-# 
-has=$(tmux ls)
+# kill all tmux sessions
+tmux kill-server
 
-if [ $? -ne 0 ]; then
-    # session create, default window: 0:bash
-    $cmd new -s $session -d 
+# session create, default window: 0:bash
+$cmd new -s $session -d 
 
-    # window rename
-    tmux rename-window -t $session:0 "bash"
+# window rename
+tmux rename-window -t $session:0 "Journey"
 
-    # window create
-    # 1:Coding Directory
-    $cmd neww -a -n Coding -t $session  
-    $cmd send -t $session:Coding "$dcode" Enter
+# window create
+# 1:Coding Directory
+$cmd neww -a -n work -t $session  
+$cmd send -t $session:work "$work" Enter
 
-    # 2:Compile: cd ~/rpmbuild/BUILD/
-    $cmd neww -a -n Compile -t $session
-    $cmd send -t $session:Compile "$dcompile" Enter
+# 2:Compile: cd ~/rpmbuild/BUILD/
+$cmd neww -a -n v7 -t $session
+$cmd send -t $session:v7 "$nfs" Enter
 
-    # 3:Translation: trans :en
-    $cmd neww -a -n Translation -t $session
-    $cmd send -t $session:Translation "trans :en " Enter
-    # window split horizontally, trans :zh
-    $cmd split-window -h -t $session:Translation 
-    $cmd send -t $session:Translation "trans :zh " Enter
+# 3:Translation: trans :en
+# $cmd neww -a -n Translation -t $session
+# $cmd send -t $session:Translation "trans :en " Enter
+# $cmd split-window -h -t $session:Translation 
+# $cmd send -t $session:Translation "trans :zh " Enter
 
-    # 4:Learning: cd ~/Markdown
-    $cmd neww -a -n Learning -t $session
-    $cmd send -t $session:Learning "$dmarkdown" Enter
-
-    # 5:Others: For others
-    $cmd neww -a -n Others -t $session # 5:Others
-
-    # window select 
-    $cmd selectw -t $session:1
-fi
+# window select 
+$cmd selectw -t $session:1
 
 # session attach
-$cmd attach -t $session
-
-exit 0
-
+# $cmd attach -t $session

@@ -1,3 +1,5 @@
+`Tags:` 远程连接
+
 # 通过nfs将Ubuntu远程目录挂载（mount）到fedora本地
 由于项目的复杂性，v7操作系统是Fedora系列，主要开发环境是Ubuntu系列。
 此外，一些开发代码和文档也是放在Ubuntu机器上。

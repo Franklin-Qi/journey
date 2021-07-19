@@ -1,0 +1,172 @@
+hello.o: hello.c /usr/include/stdc-predef.h /usr/include/stdio.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/mips64el-linux-gnuabi64/sys/cdefs.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/wordsize.h \
+ /usr/include/sgidefs.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/long-double.h \
+ /usr/include/mips64el-linux-gnuabi64/gnu/stubs.h \
+ /usr/include/mips64el-linux-gnuabi64/gnu/stubs-n64_hard.h \
+ /usr/lib/gcc/mips64el-linux-gnuabi64/9/include/stddef.h \
+ /usr/lib/gcc/mips64el-linux-gnuabi64/9/include/stdarg.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/timesize.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/typesizes.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/time64.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/__fpos_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/__mbstate_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/__fpos64_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/__FILE.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/FILE.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/struct_FILE.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdio_lim.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/sys_errlist.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdio.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdio2.h /usr/include/stdlib.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/waitflags.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/waitstatus.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/floatn.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/floatn-common.h \
+ /usr/include/mips64el-linux-gnuabi64/sys/types.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/clock_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/clockid_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/time_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/timer_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdint-intn.h \
+ /usr/include/endian.h /usr/include/mips64el-linux-gnuabi64/bits/endian.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/endianness.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/byteswap.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/uintn-identity.h \
+ /usr/include/mips64el-linux-gnuabi64/sys/select.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/select.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/sigset_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/__sigset_t.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/struct_timeval.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/types/struct_timespec.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/select2.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/pthreadtypes.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/thread-shared-types.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/pthreadtypes-arch.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/struct_mutex.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/struct_rwlock.h \
+ /usr/include/alloca.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdlib-bsearch.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdlib-float.h \
+ /usr/include/mips64el-linux-gnuabi64/bits/stdlib.h cn.h
+
+/usr/include/stdc-predef.h:
+
+/usr/include/stdio.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/libc-header-start.h:
+
+/usr/include/features.h:
+
+/usr/include/mips64el-linux-gnuabi64/sys/cdefs.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/wordsize.h:
+
+/usr/include/sgidefs.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/long-double.h:
+
+/usr/include/mips64el-linux-gnuabi64/gnu/stubs.h:
+
+/usr/include/mips64el-linux-gnuabi64/gnu/stubs-n64_hard.h:
+
+/usr/lib/gcc/mips64el-linux-gnuabi64/9/include/stddef.h:
+
+/usr/lib/gcc/mips64el-linux-gnuabi64/9/include/stdarg.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/timesize.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/typesizes.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/time64.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/__fpos_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/__mbstate_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/__fpos64_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/__FILE.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/FILE.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/struct_FILE.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdio_lim.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/sys_errlist.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdio.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdio2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/waitflags.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/waitstatus.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/floatn.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/floatn-common.h:
+
+/usr/include/mips64el-linux-gnuabi64/sys/types.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/clock_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/clockid_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/time_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/timer_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdint-intn.h:
+
+/usr/include/endian.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/endian.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/endianness.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/byteswap.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/uintn-identity.h:
+
+/usr/include/mips64el-linux-gnuabi64/sys/select.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/select.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/sigset_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/__sigset_t.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/struct_timeval.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/types/struct_timespec.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/select2.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/pthreadtypes.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/thread-shared-types.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/pthreadtypes-arch.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/struct_mutex.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/struct_rwlock.h:
+
+/usr/include/alloca.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdlib-bsearch.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdlib-float.h:
+
+/usr/include/mips64el-linux-gnuabi64/bits/stdlib.h:
+
+cn.h:

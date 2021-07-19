@@ -1,0 +1,91 @@
+# 伪目标.PHONY: 避免与同名文件发生冲突，以及提高性能
+.PHONY: all clean install
+
+# 一般内部文件
+filename = hello.o libcn.a
+
+# CC默认变量
+CC=gcc
+
+CFLAGS=-Wall -g
+LDFLAGS=-fPIC
+INCLUDE=-I${include}
+LIBDIRS=-L${lib}
+LIBS=-lcn
+taret=${obj}/hello.o ${obj}/cn.o
+libs=${lib}/libcn.a
+bin=./bin
+lib=./lib
+obj=./obj
+src=./src
+
+${target}:${objs} ${libs}
+	${CC} $(objs) -o $@ ${LIBDIRS} ${LIBS}
+
+${libs}:${obj}/cn.o
+	ar -crv $@ @<
+
+${obj}/%.o:${src}/%.c
+	${CC} ${INCLUDE}  ${CFLAGS} -c $<  -o $@
+
+all: hello hello.o libcn.a cn.o
+
+# 直接执行make hello也行，因为依赖关系树存在
+#hello: $(filename)
+#	gcc hello.o -L./ -lcn -o $@
+
+# 自动化变量$<: 对应依赖文件
+# 静态模式：模式字符%
+# 模式规则：需要包含%匹配任何非空字符串，依赖中%的取值依赖与目标匹配的
+# 模式规则表明了去匹配这样的规则，将模式规则作为一个明确的目标，make会失败，见Makefile1
+# 整个规则描述了一个o目标文件由对应的.c文件创建
+#%.o:%.c
+#	$(CC) -c $(CFLAGS) $< -o $@
+#
+#libcn.a:cn.o
+	#ar -crv libcn.a cn.o
+
+install:
+	cp -a ${target} /usr/bin
+
+clean:
+	rm -rf ${bin}/* ${lib}/* ${obj}/*
+	@echo $*
+
+# 多目标
+# 自动化变量$@为目标文件: make file1 file2
+file1 file2:cn.c
+	echo "123" > $@
+
+# 递归展开变量（延迟展开变量），比较方便
+# 只有在被引用时才被展开，刚开始定义时不会被展开
+#var=${var1}
+## var1=${var} 循环引用时会有错
+#var1=hello
+#test:
+	#@echo ${var}
+
+# 立即展开变量（延迟展开变量），比较严谨
+# 可以先用递归展开变量，后转成立即展开变量
+# 立即展开的值，如果没有值，那就为空
+var:=${var1}
+# var1=${var} 循环时会有错
+var1:=test
+test:
+	@echo ${var}
+
+# 变量引用：$(filename)或者${filename}
+src=cn.c hello.c
+# 替换引用：${src:c=o}替换变量src中所有a字符结尾的字为b结尾的字
+obj=${src:.c=.o}
+sub:
+	@echo ${obj}
+
+# 嵌套引用
+a=${b}
+b=c
+c=d
+var=${${a}}
+nest:
+	@echo ${var}
+

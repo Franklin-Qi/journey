@@ -10,6 +10,7 @@ $ chmod 777 autotmux
 ```
 
 使用autotmux脚本
+autotmux脚本也是一种保存会话的方式，可以每次自动输入自己想要的命令。
 ```bash
 $ autotmux
 ```
@@ -93,3 +94,44 @@ $ tmux source ~/.tmux.conf
 或者在tmux窗口中: source-file ~/.tmux.conf
 ```
 
+#### 复制粘贴
+[ 复制模式，光标移动到复制内容位置，空格键开始，方向键选择复制，回车确认，q/Esc退出
+] 进入粘贴模式，粘贴之前复制的内容，按q/Esc退出
+
+
+#### 自动保存会话
+为了防止突然关机和其他异常，可以手动保存会话。
+`tpm`用于[tmux插件](https://github.com/tmux-plugins/)的管理。
+```shell
+$ mkdir ~/.tmux/plugins && cd ~/.tmux/plugins
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins
+```
+安装后需在~/.tmux.conf中增加配置：
+```shell
+# 默认需要引入的插件
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# 引入其他插件的示例
+# set -g @plugin 'github_username/plugin_name' # 格式：github用户名/插件名
+# set -g @plugin 'git@github.com/user/plugin' # 格式：git@github插件地址
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+# 初始化tmux插件管理器(保证这行在~/.tmux.conf的非常靠后的位置)
+run '~/.tmux/plugins/tpm/tpm'
+
+# autosave session: tmux-continuum
+set -g @continuum-save-interval '1440' # 1440 = 60(min) * 24 = 1 day
+set -g status-right 'Continuum status: #{continuum_status}' # show save time status
+set -g @continuum-restore 'on' # 启用自动恢复
+```
+之后，`ctrl+a r`使配置生效，`ctrl+a I`使安装插件。
+`ctrl+a ctrl+s`保存会话，`ctrl+a ctrl+r`恢复会话，或者每天都会自动保存会话。
+
+
+#### 去掉小圆点
+终端下输入`tmux a -d`，或者tmux会话中`ctrl+a :`，输入以下命令
+```shell
+: a -d
+```

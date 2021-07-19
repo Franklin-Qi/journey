@@ -1,0 +1,5 @@
+cn.o: cn.c /usr/include/stdc-predef.h cn.h
+
+/usr/include/stdc-predef.h:
+
+cn.h:

@@ -32,9 +32,15 @@ $ sudo systemctl restart nfs-kernel-server # 重启nfs服务
 
 ```
 
-### Fedora客户端配置
+### 应用1 Fedora客户端配置
 ```shell
 $ sudo yum install nfs-utils
+$ mkdir /home/yushuoqi/nfs
+$ mount -t nfs 172.30.40.149:/home/yushuoqi/nfs /home/yushuoqi/nfs # Ubuntu网络地址为172.30.40.149
+
+### 应用2 Ubuntu客户端配置
+```shell
+$ sudo apt install nfs-kernel-server nfs-common
 $ mkdir /home/yushuoqi/nfs
 $ mount -t nfs 172.30.40.149:/home/yushuoqi/nfs /home/yushuoqi/nfs # Ubuntu网络地址为172.30.40.149
 ```

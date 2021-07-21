@@ -12,12 +12,22 @@ $ cat qt-all.list |xargs sudo apt install -y
 ```
 
 ## 配置Qtcreator
+重新安装操作系统后，安装QtCreator所需的软件
+message: 
+    apt-cache search tesseract-ocr 
+    apt-cache search qt |grep ^qt |awk '{print $1}' |xargs sudo apt install -f 
+```shell
+sudo apt install qt5-assistant qt5-default qt5-doc qt5-doc-html \
+    qt5-qmake qt5-qmake-bin qt5-style-plugins qt5serialport-examples \
+    git build-essential nfs-common  nfs-kernel-server nfstrace nfstrace-doc  nfswatch
+```
 
 ### 提示Kit不存在
 option -> qt version -> 选择qmake路径为`/usr/lib/qt5/bin/qmake`
 
 ### 代码提示很多未定义
 帮助-》关于插件-》c++，只保留`ClassView`和`CppEditor`。
+
 ## 解决警告
 qt overriding recipe for target 'install_target'
 命令行进行qmake查看该行Makefile，查看有多行install_target，

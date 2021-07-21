@@ -29,3 +29,5 @@ A4AD689AAF357EFF
 https://blog.csdn.net/ligerendaqiu123/article/details/50603706
 
 https://help.ubuntu.com/community/GnuPrivacyGuardHowto
+
+[dput上传source到ppa手册](http://zsk.kylin.com/support/article/view/146#header_5)

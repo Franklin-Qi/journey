@@ -5,7 +5,10 @@ Qtcreator下载地址：http://download.qt.io/archive/qt/
 
 安装对应依赖
 ```bash
-$ sudo apt install qtcreator qt5-default qttools5-dev-tools gcc g++ libqt4-dev build-essential cmake
+$ sudo apt install libqt4-dev build-essential cmake
+$ apt-cache search qt|grep ^qt > qt-all.list
+$ cat qt-all.list |xargs sudo apt install -y 
+
 ```
 
 ## 配置Qtcreator

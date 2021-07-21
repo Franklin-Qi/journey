@@ -1,0 +1,68 @@
+#!/bin/python3
+
+import inquirer
+import sys
+from string import Template
+import subprocess
+
+def number_validation(answers, current):
+  return int(current)
+
+def empty_validation(answers, current):
+  return bool(current)
+
+def no_validation(answers, current):
+  return True
+
+def addList(name, message, list):
+  return inquirer.List(name, message, list)
+
+def addText(name, message, valid):
+  return inquirer.Text(name, message, validate=valid)
+
+def addCheck(_name, _message, _choices):
+  return inquirer.Checkbox(_name, message=_message, choices=_choices)
+
+questions = [
+  addCheck("action", "选择非选项(空格选择,回车跳过)", ['Bug', 'Issue', 'Task'])
+]
+
+optinalAnswers = inquirer.prompt(questions)
+
+questions = [
+  addList('action', "select you action", ['fix', 'feat', 'refactor', 'docs', 'chore', 'style', 'pref', 'test']),
+  addText("module", "input module name", no_validation),
+  addText('title', "input title", empty_validation),
+  addText('description', "input description", empty_validation),
+  addText("log", "input log", empty_validation),
+]
+
+optinal = {
+  "Bug": addText("bug", "input bug id", empty_validation),
+  "Issue": addText("issue", "input issue id", empty_validation),
+  "Task": addText("task", "input task id", empty_validation),
+}
+
+optinalMap = {
+  "Bug": "bug",
+  "Issue": "issue",
+  "Task": "task",
+}
+
+for action in optinalAnswers["action"]:
+  questions.append(optinal[action])
+
+answers = inquirer.prompt(questions)
+
+template = '${action}'
+
+if answers["module"]:
+  template += '(${module})'
+
+template += ': ${title}\n\nDescription: ${description}\n\nLog: ${log}\n'
+
+for action in optinalAnswers["action"]:
+  template += action + ": ${" + optinalMap[action] + "}\n"
+
+subprocess.run(["git", "commit", "-m", Template(template).substitute(answers)])
+

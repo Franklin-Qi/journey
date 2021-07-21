@@ -1,0 +1,17 @@
+[lpdev]
+fqdn = ppa.launchpad.dev:2121
+method = ftp
+incoming = %(lpdev)s
+login = anonymous
+
+[dev]
+fqdn = ppa.launchpad.dev:2121
+method = ftp
+incoming = /%(dev)s
+login = anonymous
+
+[devppa]
+fqdn = ppa.launchpad.dev:2121
+method = ftp
+incoming = ~%(devppa)s
+login = anonymous

@@ -35,3 +35,8 @@ OCR英文全称是Optical Character Recognition，中文叫做光学字符识别
 ## 参考
 [OCR博客](https://blog.csdn.net/qq_34886403/article/details/86770151)
 
+## g++编译
+```shell
+$ g++ test.cpp -llept -ltesseract
+```
+

@@ -432,3 +432,7 @@ build-essential debmake debhelper dh-make devscripts xutils-dev
 - [developers-reference](http://www.debian.org/doc/devel-manuals#devref) 描述了打包所需的包含技术细节在内的全部详细信息，如仓库结构、如何重命名/丢弃/接手软件包、如何进行 `NMU`(非维护者上传)、如何管理 Bug 以及打包最佳实践、何时向何处上传等。
 - [debian维护者手册](https://www.debian.org/doc/manuals/maint-guide/) 打包相关
 
+
+## debian打包
+1. quilt
+2. dpkg-source --commit

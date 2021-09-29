@@ -251,3 +251,10 @@ git status
 
 
 ## 总体设计
+
+
+## debian目录增加postinst, postrm, prerm, preinst
+比如，postinst为shell脚本
+touch debian/kylin-scanner.postinst 
+chmod 755 debian/kylin-scanner.postinst
+

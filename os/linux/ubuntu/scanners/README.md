@@ -1,4 +1,5 @@
-# sane-backends如何适配驱动？
+# <font color="red">sane-backends如何适配驱动？</font>
+
 `扫描驱动`是由指定扫描仪厂商进行研发的包含动态库等文件的deb包，如`drc240_1.00-1.2.mips64.deb`驱动就是由佳能厂商研发。
 `适配驱动`是指定扫描仪厂商已经适配了sane-backends，通过安装驱动包能实现正确扫描。
 
@@ -166,4 +167,4 @@ $ sudo dpkg -i ./drc240_1.00-1.2-v10-sp1.mips64.deb # 安装修改的驱动包�
 ## 参考网址
 sane手册: https://www.freebsd.org/cgi/man.cgi?query=sane&sektion=7&manpath=freebsd-release-ports
 backend后台手册: http://www.sane-project.org/backend-writing.txt
-图像扫描仪: https://www.xuchao.org/docs/freebsd/scanners.html
+图像扫描仪: https://www.xuchao.org/docs/freebsd/scanners.html##gg

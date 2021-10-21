@@ -54,6 +54,20 @@ Ctrl + F <==> <c-f>
 <c-u> 屏幕向上滚动半屏
 ```
 
+
+## 寄存器使用
+*查看*: :reg 查看所有寄存器值
+**设置**：可以使用命名寄存器，比如"x,其中x为a-z。可以将多个可复制的文本放到寄存器。如"ayy, "byy。
+**使用**: 粘贴"ap, "bp。
+
+## ZZ使用
+ZZ 快速保存并关闭
+ZQ 快速关闭但不保存
+
+zt 将当前行设为当前页面顶行top
+zz 将当前行设为当前页面中间行
+zb 将当前行设为当前页面最低行bottom
+
 ## 命令行编辑
 :help cmdline
 ```shell
@@ -151,8 +165,14 @@ buffer帮助
 v motion  选择文本
 :w FILENAME 保存文本到FILENAME
 
+或者:1,10w Filename
+
 合并
 :r FILENAME  从FILENAME提取文本到当前行
+
+
+## 刷新当前文档
+:e 可以在其他更改时，刷新当前文档
 
 
 ## 插入补全模式
@@ -164,8 +184,8 @@ CTRL+Y: 选中当前补全
 CTRL+E: 撤销当前补全
 
 :h ins-completion@cn
-补全可以是针对:
 
+ctrl+x 也可以补全文档
 ```shell
 1. 整行							|i_CTRL-X_CTRL-L|
 2. 当前文件内的关键字					|i_CTRL-X_CTRL-N|
@@ -181,6 +201,7 @@ CTRL+E: 撤销当前补全
 12. 拼写建议						|i_CTRL-X_s|
 13. 'complete' 的关键字					|i_CTRL-N|
 ```
+
 
 ## 统计单词数、行数等
 	:%s/./&/gn		字符数

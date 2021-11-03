@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>scan.pnm</file>
+        <file>scan.png</file>
+    </qresource>
+</RCC>

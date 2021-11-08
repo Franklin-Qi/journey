@@ -3,6 +3,9 @@ Qt实现多线程编程的两种方式
 - 继承自QThread类，覆写run函数。此实现方法只有run函数内的代码是运行在子线程内。
 - 创建一个QThread和QWorker(继承自QObject)类对象。使用moveToThread函数移动到thread中运行，通过thread类start信号和worker槽函数绑定
 
+## QThread 避免退出时报段错误core文件
+在程序退出时，需要将已有的thread进行wait（）和quit（）， 否则会有段错误。
+
 ## QThread实现多线程
 qdemothread.h
 ```c++

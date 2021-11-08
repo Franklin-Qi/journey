@@ -6,6 +6,9 @@ QLabel可以显示图片。
     ui->titleLabel->setStyleSheet("QLabel{font-size: 18px; color: palette(windowText);}");
 ```
 
+## QLabel 进行截图的方向思考
+加载带有图片的截图，可以使用QWidget进行绘制，之后根据位置绘制出所有的带图片的矩形和线条。
+
 ## QPixmap图片反白
 `ukui-control-center(plugins/messages-task/about/about.cpp)`通知关于界面的关于图标反白
 ```c++

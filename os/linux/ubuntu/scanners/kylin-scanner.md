@@ -1,5 +1,19 @@
 # kylin-scanner
 
+## 文件名需要符合桌面环境命名规则
+当文件名不符合桌面环境命名规则，会出现在桌面环境peony上不能保存，以及额外的一些操作，
+所以需要对文件名进行额外处理，以满足peony命名规则。
+具体在文件： libpeony-qt/file-operation/file-rename-operation.cpp:nameIsValid()
+
+## io 错误
+当遇到io错误时，有时会出现scanimage 也是sane_start提示io错误，并不代表没有驱动。
+此时可以开关机重启扫描仪，或者插拔USB线来解决。
+
+## 适配Hp 250
+扫描出的pnm原始图片不能用qt打开，但可用eom打开，最开始以为是驱动问题，但之后可以
+修改图片打开方式，利用freeimage打开pnm图片（但实际是bmp格式图片），可以正确打开，完成
+扫描仪适配。
+
 
 ## 中文国际化
 文件对话框中有些未汉化，可以将`Qt5.14.2/5.14.2/Src/qttranslations/translations/qt_zh_CN.ts` 

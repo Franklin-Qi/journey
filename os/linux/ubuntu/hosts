@@ -1,0 +1,66 @@
+127.0.0.1	localhost
+127.0.1.1	yushuoqi
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+172.20.191.4 answers.launchpad.dev archive.launchpad.dev api.launchpad.dev bazaar.launchpad.dev bazaar-internal.launchpad.dev blueprints.launchpad.dev bugs.launchpad.dev code.launchpad.dev feeds.launchpad.dev lists.launchpad.dev ppa.launchpad.dev private-ppa.launchpad.dev translations.launchpad.dev xmlrpc-private.launchpad.dev xmlrpc.launchpad.dev launchpad.dev testopenid.dev dev.kylinos.cn
+172.20.191.4 keyserver.launchpad.dev 
+172.20.191.209 gitlab2.kylin.com
+#172.20.191.29  oauth.kylin.com
+172.17.66.61 zentao.tjsource.xyz zentao.kylin.com
+
+172.19.0.52 www.kylin.com sso.kylin.com mail.kylin.com
+
+192.168.240.110 kydcserver.kylin.com
+192.168.0.175   distro.kylin.com builder.kylin.com
+172.17.50.104 pm.kylin.com
+192.168.6.179   pm2.kylin.com
+#172.19.0.52     www.kylin.com
+#172.19.0.52     mail.kylin.com
+192.168.6.55    zsk.kylin.com
+
+
+# Github Hosts
+# Update 20211204
+# domain: github.com
+140.82.114.4 github.com
+140.82.114.10 nodeload.github.com
+140.82.114.6 api.github.com
+140.82.114.10 codeload.github.com
+185.199.108.133 raw.github.com
+185.199.108.153 training.github.com
+185.199.108.153 assets-cdn.github.com
+185.199.108.153 documentcloud.github.com
+185.199.108.154 help.github.com
+
+# domain: githubstatus.com
+185.199.108.153 githubstatus.com
+
+# domain: fastly.net
+199.232.69.194 github.global.ssl.fastly.net
+
+# domain: githubusercontent.com
+185.199.108.133 raw.githubusercontent.com
+185.199.108.154 pkg-containers.githubusercontent.com
+185.199.108.133 cloud.githubusercontent.com
+185.199.108.133 gist.githubusercontent.com
+185.199.108.133 marketplace-screenshots.githubusercontent.com
+185.199.108.133 repository-images.githubusercontent.com
+185.199.108.133 user-images.githubusercontent.com
+185.199.108.133 desktop.githubusercontent.com
+185.199.108.133 avatars.githubusercontent.com
+185.199.108.133 avatars0.githubusercontent.com
+185.199.108.133 avatars1.githubusercontent.com
+185.199.108.133 avatars2.githubusercontent.com
+185.199.108.133 avatars3.githubusercontent.com
+185.199.108.133 avatars4.githubusercontent.com
+185.199.108.133 avatars5.githubusercontent.com
+185.199.108.133 avatars6.githubusercontent.com
+185.199.108.133 avatars7.githubusercontent.com
+185.199.108.133 avatars8.githubusercontent.com
+# End of the section

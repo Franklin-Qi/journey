@@ -1,6 +1,7 @@
 ### 目标
 depends:
-build-essential debmake debhelper dh-make devscripts xutils-dev
+build-essential debmake debhelper dh-make devscripts xutils-dev equivs
+其中，devscripts提供mk-build-deps
 
 在我接触`debian`打包的时候，遇到过很多问题，面对众多的`debian`打包命令有些束手无策，看过[Debian官方维护者手册](https://www.debian.org/doc/manuals/maint-guide/)，但是对于急于成功打包的我来说，资料太多了（当然，官方资料永远应该是最主要的学习资料，其它渠道的都应该只是起辅助作用），所以，我先整理个快速打包流程分享一下。在实验学习中如发现任何问题或不当之处，请一定指出来，不要因为我的错误影响到别人，在此先谢谢大家。
 

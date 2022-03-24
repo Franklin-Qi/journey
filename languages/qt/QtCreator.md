@@ -6,7 +6,7 @@ Qtcreator下载地址：http://download.qt.io/archive/qt/
 安装对应依赖
 ```bash
 $ sudo apt install libqt4-dev build-essential cmake
-$ apt-cache search qt|grep ^qt > qt-all.list
+$ apt-cache search qt|grep ^qt |awk '{print $1}' > qt-all.list
 $ cat qt-all.list |xargs sudo apt install -y 
 
 ```
@@ -24,9 +24,10 @@ sudo apt install qt5-assistant qt5-default qt5-doc qt5-doc-html \
 
 ### 提示Kit不存在
 option -> qt version -> 选择qmake路径为`/usr/lib/qt5/bin/qmake`
+或者直接选择 /usr/bin/qmake
 
 ### 代码提示很多未定义
-帮助-》关于插件-》c++，只保留`ClassView`和`CppEditor`。
+帮助-》关于插件-》C++，只保留`ClassView`和`CppEditor`。
 
 ## 解决警告
 qt overriding recipe for target 'install_target'

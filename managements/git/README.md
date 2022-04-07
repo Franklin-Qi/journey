@@ -8,11 +8,44 @@
 * [五、分支发布](#五分支发布)
 * [六、Tag追踪](#六tag追踪)
 * [七、修复线上bug](#七修复线上bug)
-   * [八、分支修改理解](#八分支修改理解)
+* [八、分支修改理解](#八分支修改理解)
 * [九、参考](#九参考)
 
 # 一、创建新仓库
-在github或者gitlab中创建一个新的仓库，这时候项目是空的，而且只有一个master分支。
+在github或者gitlab中创建一个新的仓库，这时候项目是空的，而且只有一个main分支。
+
+github在2020/10/1宣布上的所有新库都将用中性词「main」命名，取代原来的「master」，
+如果我们通过git push -u grigin master 方法上传仓库，在github仓库中就会出现一个master的分支。
+
+## 1.1 本地文件和远程仓库关联
+```
+# 将代码上传到master分支（旧）
+$ git init
+$ git add .
+$ git commit -m "First Commit"
+$ git remote add origin xxx.git    # 本地仓库和远程github关联
+$ git pull --rebase origin master  # 远程有readme.md，拉一下
+$ git push -u origin master        # 代码合并
+--------------------------------------------------------------------
+
+# 将代码上传到GitHub的默认main分支（新）
+$ git --version
+$ git config --global init.defaultBranch main   # git在2.28.0上，重新设置git默认分支为main
+$ git init
+$ git add .
+$ git commit -m "First Commit"
+$ git remote add origin xxx.git  # 本地仓库和远程github关联
+$ git pull --rebase origin main  # 远程有readme.md，拉一下
+$ git push -u origin main        # 代码合并
+
+# 如果创建了master分支, 可以合并后进行删除master分支
+$ git branch -d 分支名称 # 删除本地分支
+$ git branch -D 分支名称 # 强制删除本地分支
+$ git push origin --delete 分支名称 # 删除远程分支
+
+# fatal: 拒绝合并无关的历史的错误解决
+$ git pull origin master --allow-unrelated-histories   
+```
 
 # 二、创建develop分支
 第一个开发人员RD进来了，他在本地创建一个develop分支，并且提交到远程
@@ -99,4 +132,5 @@ git branch -d hotfix/#47892
 
 # 九、参考
 [Franklin-Qi free-programming-books-zh_CN](https://github.com/Franklin-Qi/free-programming-books-zh_CN)
+[git-scm Book](http://git-scm.com/book)
 

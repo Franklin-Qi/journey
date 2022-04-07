@@ -58,12 +58,14 @@ git status
 ```
 
 ## 通过ssh进行下载仓库
+[Github Docs: generating-a-new-ssh-key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 有时http网速不行导致下载远程仓库失败，可以通过ssh进行git clone
-```
+``` bash
 # 1. 配置ssh
-$ ssh-keygen -t rsa -C "yushuoqi@kylinos.cn"
-$ cat ~/.ssh/id_rsa.pub
-将上面的ssh秘钥在网页上新增SSH
+$ ssh-keygen -t rsa -b 4096 -C "yushuoqi@kylinos.cn" # 或者ssh-keygen -t rsa -C "18513412153@163.com"
+$ eval "$(ssh-agent -s)" # 开启ssh-agent
+$ ssh-add ~/.ssh/id_rsa # 增加ssh key到ssh-agent
+$ cat ~/.ssh/id_rsa.pub # ssh公钥在网页上新增SSH
 
 # 2. 测试ssh
 $ ssh -T git@gitee.com
@@ -72,6 +74,14 @@ $ ssh -T git@gitee.com
 # 3. git clone
 在网页上的仓库clone处，将HTTPS换成SSH得到git clone地址
 $ git clone xxx.git
+
+或者修改当前HTTPS方式的仓库为ssh方式
+$ vi .git/config # 修改远程url， ；为注释，如下内容
+
+[remote "origin"]
+	url = git@github.com:Franklin-Qi/journey.git
+	; url = https://github.com/Franklin-Qi/journey.git
+
 ```
 
 ## 增加语言设置为c++

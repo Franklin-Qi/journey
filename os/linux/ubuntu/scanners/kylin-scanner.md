@@ -74,7 +74,7 @@ function mycppcheck {
 ## 初始ukui需要安装的依赖软件
 sudo apt install openssh-server
                  libopencv-dev
-                 vim git ctags
+                 vim git exuberant-ctags
                  sane sane-utils xsane libsane-dev libsane
                  libglib2.0-dev
                  tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim libleptonica-dev liblept5 libtesseract-dev

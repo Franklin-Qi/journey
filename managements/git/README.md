@@ -24,7 +24,7 @@ $ git init
 $ git add .
 $ git commit -m "First Commit"
 $ git remote add origin xxx.git    # 本地仓库和远程github关联
-$ git pull --rebase origin master  # 远程有readme.md，拉一下
+$ git pull --rebase origin master  # 合并远程分支
 $ git push -u origin master        # 代码合并
 --------------------------------------------------------------------
 
@@ -34,8 +34,8 @@ $ git config --global init.defaultBranch main   # git在2.28.0上，重新设置
 $ git init
 $ git add .
 $ git commit -m "First Commit"
-$ git remote add origin xxx.git  # 本地仓库和远程github关联
-$ git pull --rebase origin main  # 远程有readme.md，拉一下
+$ git remote add origin xxx.git  # 本地仓库和远程github关联, 所以origin可以理解为远程仓库地址的名称
+$ git pull --rebase origin main  # 合并远程分支
 $ git push -u origin main        # 代码合并
 
 # 如果创建了master分支, 可以合并后进行删除master分支

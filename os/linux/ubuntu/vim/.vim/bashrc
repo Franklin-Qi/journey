@@ -1,0 +1,152 @@
+# .bashrc
+
+# 格式：\033[显示方式;前景色;背景色m
+# 
+# 说明：
+# 前景色            背景色           颜色
+# ---------------------------------------
+# 30                40              黑色
+# 31                41              红色
+# 32                42              绿色
+# 33                43              黃色
+# 34                44              蓝色
+# 35                45              紫红色
+# 36                46              青蓝色
+# 37                47              白色
+# 
+# 显示方式           意义
+# -------------------------
+# 0                终端默认设置
+# 1                高亮显示
+# 4                使用下划线
+# 5                闪烁
+# 7                反白显示
+# 8                不可见
+# 
+# 例子：
+# \033[1;31;40m    <!--1-高亮显示 31-前景色红色  40-背景色黑色-->
+# \033[0m          <!--采用终端默认设置，即取消颜色设置-->
+
+# icon window-maximize-symbolic.svg folder-open.svg
+
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# for pycharm
+alias pycharm='nohup sh /opt/pycharm-community-2020.3/bin/pycharm.sh  >/dev/null 2>&1 &'
+
+# for tar before debuild
+alias mytar='tar -czvf kylin-scanner_1.0.0.orig.tar.gz --exclude=debian --exclude=.git kylin-scanner-1/'
+alias mydebuild='debuild -sa -S -nc -k207A3F2D41450CBC'
+alias dputdev='cp ~/.dput.cf-dev ~/.dput.cf; dput dev:kylin-desktop/v101-proposed '
+alias dputppav101='cp ~/.dput.cf-ppa ~/.dput.cf; dput devppa:yushuoqi/kylin/v101-test '
+
+# for cppcheck: $1 is filename
+function mycppcheck {
+    cppcheck --enable=warning,style,performance "$1" 2>err.txt; vi err.txt
+    #cppcheck --enable=all "$1" 2>err.txt; vi err.txt
+}
+
+# shopt use ! command
+shopt -s extglob
+
+# Function toc-md: help gh-md-toc to generate dir
+function md-toc {
+    echo "$(gh-md-toc  $1)" >> $1
+}
+
+# Function myfind: abbr find
+function myfind {
+    find . -name $1
+}
+
+# Function mygitcommit:
+function mygitcommit {
+    git add . ; git commit -m "$1"
+}
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+# smb://10.1.80.80/loongson/mipsDoc/shuoqi.yu qwer1234
+
+# ps -ef
+alias myps='ps -ef | grep '
+
+# lintian
+alias mylintian='lintian -i -EvIL +pedantic --verbose ../kylin-scanner_1.0.0_amd64.changes > lintian.txt'
+
+# cman
+alias cman='man -M /usr//share/man/zh_CN'
+export LC_CTYPE=zh_CN.UTF-8
+
+# mysql
+alias mysqllogin='mysql -udebian-sys-maint -pMTiXp6Dt0Oe1ct2F'
+
+# color
+alias ls='ls --color '
+alias grep='grep --color '
+
+# .bashrc
+alias vib='vim ~/.bashrc'
+alias srcb='source ~/.bashrc'
+
+# vim
+alias vi='vim '
+alias vifile='cd ~/; vim '
+
+# cd
+alias cdsrc='cd /home/yusq/example-qtcreator/src/'
+alias cdrpmbuild='cd ~/rpmbuild/'
+alias cdbuild='cd ~/rpmbuild/BUILD/'
+alias cdhome='cd ~/'
+alias myturn='cd -'
+alias ..='cd ../'
+alias ..2='cd ../../'
+alias ..3='cd ../../../'
+alias cdcodefactory='cd /home/yusq/CodeFactory '
+
+# git
+alias gitpush='git push origin HEAD:refs/for/master'
+alias buildbp='rpmbuild -bp -D "_topdir `pwd`" '
+alias buildba='rpmbuild -ba -D "_topdir `pwd`" '
+alias buildbs='rpmbuild -bs -D "_topdir `pwd`" '
+
+# ssh
+alias sshloongson='ssh yusq@10.1.81.129' # ']\
+alias ssharm='ssh yusq@10.1.81.206'
+alias sshl2='ssh root@10.1.81.202 -X' # 1
+
+# nohup stardict
+alias nohupstardict='nohup  stardict  >/dev/null 2>&1 &'
+
+# software-center
+alias cdsoftware='cd /usr/share/doc/software-center/'
+
+# mutter
+alias mygrep='grep -nr '
+alias myschemas='sudo glib-compile-schemas schemas/'
+alias cdglib='cd /usr/share/glib-2.0/'
+alias vibindings='sudo vim schemas/org.gnome.desktop.wm.keybindings.gschema.xml'
+alias cdmutter='cd ~/rpmbuild/BUILD/mutter-3.14.4/'
+alias vimutter='cd ~/rpmbuild; vim SPECS/mutter.spec'
+alias vikey='cd  ~/rpmbuild/BUILD/mutter-3.14.4/; vim src/core/keybindings.c'
+alias viwin='vim src/core/window.c'
+alias mutterbp='rpmbuild -bp SPECS/mutter.spec'
+alias mutterba='rpmbuild -ba SPECS/mutter.spec'
+alias cpa='cp mutter-3.14.4/ bak -a'
+alias mydiff='diff -Nura bak/ mutter-3.14.4/ > '
+
+
+# eom
+alias cdeom='cd ~/rpmbuild/eom-1.24.0/'
+
+
+# valgrind memory loss
+alias myvalgrind='valgrind --tool=memcheck --log-file=test.log  --leak-check=yes --show-reachable=yes ~/build-kylin-scanner-Desktop-Debug/src/kylin-scanner'
+
+[ -r /usr/share/kysec-auth/kysec_env.sh ] && . /usr/share/kysec-auth/kysec_env.sh

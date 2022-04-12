@@ -1,0 +1,33 @@
+# README
+这里包括了一些vim的配置优化，由于该配置的已经在相应的文件中，可加快vim配置。
+
+# 配置操作详述
+1. 将vim/ 整个拷贝到 .vim/，并且拷贝bashrc快捷命令配置
+mv vim/ .vim/
+cd .vim/ && cp bashrc ~/.bashrc && source ~/.bashrc
+cp vimrc ~/.vimrc
+
+2. 配置Ctags和Tlist进行代码跳转
+sudo yum install -y ctags
+cd .vim/doc/ && vim => :helptags .  (使Tlist生效)
+
+>> 对于全局查找systags，可用以下命令进行创建:
+sudo ctags -I __THROW --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --fields=+S -R -f ~/.vim/systags /usr/include /usr/local/include
+
+3. 源码生成ag，进行替代grep在文件中查找
+./build.sh
+sudo make install
+
+4. 使vundle插件生效，非必须
+```shell
+vim => PluginList   PluginInstall
+```
+
+如果插件出错，可以卸载插件，同时修改~/.vimrc，如下
+```shell
+rm -f ~/.vim/bundle/markdown-preview.nvim/
+```
+
+
+5. 至此.vimrc可以生效，enjoy it!
+

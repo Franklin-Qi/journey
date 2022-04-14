@@ -5,7 +5,11 @@ tmux auto scripts
 Using *root* privileges to exec cmds as follows:
 ```bash
 $ cp /etc/tmux.conf /etc/
-$ mv autotmux /usr/bin/
+$ cp /etc/tmux.conf ~/.tmux.conf
+$ tmux source ~/.tmux.conf # 配置文件生效
+
+# 下面是autotmux配置文件需要的
+$ mv autotmux /usr/bin/ 
 $ chmod 777 autotmux
 ```
 

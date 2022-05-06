@@ -505,4 +505,14 @@ qa # 进行录制
 @q # 使用宏
 ```
 
+## vim ack.vim 支持ag
+1. 安装ag
+```Bash
+sudo apt install silversearcher-ag
+```
+
+2. ag 搜索配置
+在项目目录添加.ignore文件，添加内容 tags ，可以ag搜索时过滤tags文件的内容。
+
+vim 中快捷键 <C-K>  可以开启ag，同时使用 "" 包含搜索字段，否则带空格的会失败。
 

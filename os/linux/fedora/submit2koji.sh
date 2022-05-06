@@ -25,8 +25,8 @@ if [ ! -n "$4" ]; then
     echo "       nd7-x86-ty-zx        (useful)"
     echo ""
     echo "常用User有 :"
+    echo "       huanzhang.yan       (默认使用 --scratch 参数)"
     echo "       kunpeng.wu       (默认使用 --scratch 参数)"
-    echo "       yuan.zhang       (默认使用 --scratch 参数)"
     echo "       os7.0builders    (useful 默认不使用 --scratch 参数)"
     echo "       其他用户         (默认不使用 --scratch 参数)"
     echo ""
@@ -83,8 +83,6 @@ fi
 
 if [ $3 == "kunpeng.wu" ] || [ $3 == "Dapeng" ]; then
     koji --profile=$PROFILE --user kunpeng.wu --password $4 build $2 $1 --nowait --scratch
-elif [ $3 == "yuan.zhang" ]; then
-    koji --profile=$PROFILE --user yuan.zhang --password $4 build $2 $1 --nowait --scratch
 elif [ $3 == "os7.0builders" ]; then
     koji --profile=$PROFILE --user=os7.0builders --password=$4 build $2 $1 --nowait $5
 #    koji --user=os7.0builders --password=$4 build $2 $1 --nowait --scratch

@@ -20,7 +20,12 @@ backend/ : 包含了sane已支持的扫描驱动，如canon_dr.c 代表了已支
 ## 一、编译并运行scanimage
 首先获取sane-backends源码，参考 **./README** 文件，按如下步骤进行编译sane-backends
 ```shell
-$ ./configure
+# sane api 开发时需要的依赖
+$ sudo apt-get update
+$ sudo apt-get sane sane-utils libsane-dev
+
+# 编译, 如果遇到依赖错误，可以把sane-backends/debian/control 中的依赖都安装
+$ ./configure 
 $ make
 ```
 编译完后，可以根据进入到scanimage.c 所在目录的 **.libs/** 目录并运行scannimage程序

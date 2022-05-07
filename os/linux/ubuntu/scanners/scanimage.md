@@ -14,6 +14,7 @@
 
 ## sane-backends 目录简介
 frontend/ : 包含了命令行前端程序，如我们重点掌握的 scanimage.c 源码
+
 backend/ : 包含了sane已支持的扫描驱动，如canon_dr.c 代表了已支持的佳能(canon) dr系列扫描仪驱动
 
 ## 一、编译并运行scanimage
@@ -32,6 +33,7 @@ $ ./scanimage --help # 查看scanimage 帮助，最底下可以获取到可用�
 ### 1. 获取所有扫描列表
 
 通过**scanimage --help** 或者 **SANE_DEBUG_DLL=5 scanimage -L (用于调试)** 
+
 获取所有扫描仪列表。对相关常用参数做了[解释](http://www.sane-project.org/man/scanimage.1.html)，如下：
 
 ```shell
@@ -178,6 +180,9 @@ $ scanimage -d 'escl:http://172.30.40.141:8080' -l 50 -t 50 -x 215 -y 297 >a.pnm
 ```
 
 ## 四、参考资料
+
 [1. 官方英文版标准Sane API手册，目前不可访问](https://sane-project.gitlab.io/standard/)
+
 [2. 中文翻译的Sane API 手册](https://blog.csdn.net/weixin_39743893/article/details/83350568)
+
 [3. GitHub上对Sane Api的简易使用](https://github.com/Franklin-Qi/kylin-sane-test)

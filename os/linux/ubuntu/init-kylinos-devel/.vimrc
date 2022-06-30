@@ -1,5 +1,6 @@
 "==========================================
 " Vim settings
+" Hello，我是PowerVim的作者，工程师Franklin-Qi
 "==========================================
 
 
@@ -24,7 +25,26 @@ set number
 set relativenumber
 set ruler
 set cursorline
-""set cc=80
+set cc=80
+set showcmd		" display incomplete commands
+
+" Tab indent to 4
+"highlight RedundantSpaces ctermbg=red guibg=red
+"match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
+set expandtab
+set showmatch
+set guioptions-=T
+set tabstop=4 " set ts=4
+set shiftwidth=4 " set sw=4
+set softtabstop=4
+
+" Help documentation chinese
+set helplang=cn
+set encoding=utf-8
+
+" Auto & smart indent
+set smartindent
+set autoindent
 
 " fold
 set foldenable
@@ -34,6 +54,8 @@ set foldcolumn=0
 setlocal foldlevel=1
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
+" color theme, looking ~/.vim/colors/
+colorscheme Monokai_Gavin
 
 " Ctags settings
 ""map <F3> <Esc>:TlistToggle<Cr>
@@ -44,6 +66,7 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 ""let Tlist_Exit_OnlyWindow = 1
 ""let Tlist_Sort_Type = "name"
 ""set tags=tags;
+set tags=tags;/ "告诉在每个目录下如果找不到tags就到上一层目录去找
 ""set tags=~/.vim/systags
 " set autochdir
 
@@ -52,21 +75,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" Tab indent to 4
-"highlight RedundantSpaces ctermbg=red guibg=red
-"match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
-" Help documentation chinese
-set helplang=cn
-set encoding=utf-8
-
-" Auto & smart indent
-set smartindent
-set autoindent
 
 " Shortcut keybinding
 :set pastetoggle=<F10>
@@ -221,11 +229,14 @@ Plugin 'VundleVim/Vundle.vim'
 " 格式为 Plugin '用户名/插件仓库名'
 "Plugin 'tpope/vim-fugitive'
 
+Plugin 'vimcn/vimcdoc'
 Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-""Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'Raimondi/delimitMate'
 ""Plugin 'honza/vim-snippets'
 ""Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
@@ -281,6 +292,7 @@ filetype plugin indent on
 " https://blog.csdn.net/bc516125634/article/details/88858097
 map <F2> :NERDTreeMirror<CR>
 map <F2> :NERDTreeToggle<CR>
+
 let g:NERDTreeWinPos='left'
 let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
@@ -403,7 +415,7 @@ let g:ctrlp_extensions = ['funky']
 
 
 " ack.vim     quick than grep
-" Ubuntu: sudo apt install the_silversearcher-ag
+" Ubuntu: sudo apt install the_silversearcher-ag or silversearcher-ag
 " https://vimawesome.com
 " https://www.cnblogs.com/welhzh/p/7210110.html
 let g:ackprg = 'ag --nogroup --color-match --column'
@@ -442,4 +454,25 @@ func SetTitleSh()
     endif
 endfunc
 
+" a.vim 可以实现源文件头文件快速切换
+"
+" 头/源文件切换命令
+"":A 头文件／源文件切换
+"":AS 分割窗后并切换头/源文件(切割为上下两个窗口)
+"":AV 垂直切割窗口后切换头/源文件(切割为左右两个窗口)
+"":AT 新建Vim标签式窗口后切换
+"":AN 在多个匹配文件间循环切换
+
+""将光标所在处单词作为文件名打开
+"":IH 切换至光标所在文件
+"":IHS 分割窗口后切换至光标所在文件(指将光标所在处单词作为文件名打开)
+"":IHV 垂直分割窗口后切换
+"":IHT 新建标签式窗口后切换
+"":IHN 在多个匹配文件间循环切换
+""快捷键操作
+""<Leader>ih 切换至光标所在文件*
+""<Leader>is切换至光标所在处(单词所指)文件的配对文件(如光标所在处为foo.h，则切换至foo.c/foo.cpp...)
+""<Leader>ihn 在多个匹配文件间循环切换
+""
+""*<Leader>指Vim所定义的映射(map)前缀，在Vim配置文件中可过变量'mapleader'进行设置，缺省为'\'。
 

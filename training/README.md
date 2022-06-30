@@ -35,3 +35,6 @@
 
 麒麟软件学院
 2021 年 6 月 23 
+
+参考手册：
+[automake 详解](https://www.cnblogs.com/lsgxeva/p/7592485.html)

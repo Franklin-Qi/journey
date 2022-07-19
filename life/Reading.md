@@ -41,7 +41,7 @@
 
 
 ## 敏捷头脑
-[brilliant](https://brilliant.org/courses/computer-science-essentials/?tour=true) 541317814@qq.com 512123yushuoqi
+[brilliant](https://brilliant.org/courses/computer-science-essentials/?tour=true) 
 
 九界图：一花一草，一石一木，一山一湖，一云一人，一水滴。
 
